@@ -12,5 +12,26 @@ NOTES:
 */
 
 char KthIndexFromEnd(char *str, int K) {
-	return '\0';
+
+	if(  str==0 || str == "" || K<0 )
+		return '\0';
+
+	int i = 0, nextInd = 1;
+
+	//To find end of string  using two loops
+	while (str[i] != '\0'){
+		
+		i += nextInd;
+		nextInd *= 2;
+		}
+	
+	nextInd = 1;
+	while (str[i] == '\0'){
+		
+		i -= 1;// nextInd;
+		//nextInd *= 2;
+		}
+
+	return str[i - K];
+
 }
